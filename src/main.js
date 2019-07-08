@@ -11,6 +11,21 @@ Vue.config.productionTip = false
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './assets/css/index.css'
 
+// 导入vue-router
+import VueRouter from 'vue-router'
+// 注册VueRouter插件
+Vue.use(VueRouter)
+
+// 创建路由对象
+const router = new VueRouter({
+  // 配置路由规则
+  routes: [
+
+  ]
+})
+
 new Vue({
   render: createElement => createElement(App),
+  // 配置router对象
+  router
 }).$mount('#app')
