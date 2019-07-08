@@ -16,11 +16,15 @@ import VueRouter from 'vue-router'
 // 注册VueRouter插件
 Vue.use(VueRouter)
 
+// 导入 HeroList 组件
+import HeroList from './views/hero/HeroList.vue'
+
 // 创建路由对象
 const router = new VueRouter({
   // 配置路由规则
   routes: [
-
+    { path: '/', redirect: { name: 'hero' } },
+    { name: 'hero', path: '/hero', component: HeroList }
   ]
 })
 
