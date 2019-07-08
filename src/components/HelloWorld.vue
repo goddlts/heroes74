@@ -31,6 +31,11 @@
 </template>
 
 <script>
+// CommonJS 导出模块的语法
+// module.exports = {
+// }
+
+// ES6中导出模块的语法
 export default {
   name: 'HelloWorld',
   props: {
@@ -43,6 +48,7 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
+  background-color: red;
 }
 ul {
   list-style-type: none;
