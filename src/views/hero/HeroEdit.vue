@@ -47,7 +47,7 @@ export default {
     // 根据id获取数据
     getDataById() {
       this.axios
-        .get(`http://localhost:3000/heroes/${this.id}`)
+        .get(`heroes/${this.id}`)
         .then((response) => {
           const { data, status } = response
           if (status === 200) {
@@ -62,7 +62,7 @@ export default {
     // 实现修改功能
     update() {
       this.axios
-        .put(`http://localhost:3000/heroes/${this.id}`, this.formData)
+        .put(`heroes/${this.id}`, this.formData)
         .then((response) => {
           const status = response.status
           if (status === 200) {
