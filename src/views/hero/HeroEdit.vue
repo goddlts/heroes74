@@ -17,7 +17,7 @@
       <!-- button 就是提交按钮 -->
       <!-- <input type="button" value=""> -->
       <!-- prevent 事件修饰符，阻止默认行为 -->
-      <button class="btn btn-success">提交</button>
+      <button @click.prevent="update" class="btn btn-success">提交</button>
     </form>
   </div>
 </template>
@@ -60,6 +60,23 @@ export default {
             alert('获取数据失败')
           }
         })
+    },
+    // 实现修改功能
+    update() {
+      axios
+        .put(`http://localhost:3000/heroes/${this.id}`, this.formData)
+        .then((response) => {
+          const status = response.status
+          if (status === 200) {
+            // 修改成功
+            // 跳转回列表组件
+            this.$router.push('/hero')
+          } else {
+            // 修改失败
+            alert('修改失败')
+          }
+        })
+
     }
   }
 }
