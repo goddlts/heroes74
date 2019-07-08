@@ -218,8 +218,43 @@
 </template>
 
 <script>
+// 1. 英雄列表
+// 1.1  发送请求，获取数据 ✔️
+import axios from 'axios'
+// 1.2  渲染列表
 export default {
-
+  data() {
+    return {
+      // 存储获取到的列表数据
+      list: []
+    }
+  },
+  mounted() {
+    // 组件加载完毕，发送请求
+    this.loadData()
+  },
+  methods: {
+    // 加载数据的方法
+    loadData() {
+      axios
+        .get('http://localhost:3000/heroes')
+        .then((response) => {
+          // console.log(response)
+          const { data, status } = response
+          if (status === 200) {
+            // 获取成功
+            this.list = data
+            console.log(this.list)
+          } else {
+            // 获取失败
+            alert('获取数据失败')
+          }
+        })
+        .catch((err) => {
+          alert('服务器异常' + err)
+        })
+    }
+  },
 }
 </script>
 
