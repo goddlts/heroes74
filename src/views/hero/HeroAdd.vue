@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 // 使用 postman 测试接口
 // 1. 绑定文本框(下拉框)  ✔️
 // 2. 点击按钮发送请求，添加 ✔️
@@ -41,7 +40,7 @@ export default {
   methods: {
     add() {
       // 点击按钮发送请求，添加
-      axios
+      this.axios
         .post('http://localhost:3000/heroes', this.formData)
         .then((response) => {
           const status = response.status
