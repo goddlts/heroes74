@@ -5,7 +5,7 @@
       <li><a href="#">武器管理</a></li>
       <li><a href="#">装备管理</a></li> -->
 
-      <router-link class="active" to="/hero" tag="li">
+      <router-link to="/hero" tag="li">
         <a>英雄管理</a>
       </router-link>
       <router-link to="/weapon" tag="li">
